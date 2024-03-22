@@ -1,0 +1,69 @@
+MariaDB [dbti02]> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| dbkuliah_yoshi     |
+| dbti02             |
+| dbtoko             |
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+8 rows in set (0.001 sec)
+
+MariaDB [dbti02]> USE dbkuliah_yoshi
+Database changed
+MariaDB [dbkuliah_yoshi]> SHOW TABLES;
++--------------------------+
+| Tables_in_dbkuliah_yoshi |
++--------------------------+
+| jurusan                  |
+| mahasiswa                |
++--------------------------+
+2 rows in set (0.001 sec)
+
+MariaDB [dbkuliah_yoshi]> DESC jurusan;
++-------+--------------+------+-----+---------+----------------+
+| Field | Type         | Null | Key | Default | Extra          |
++-------+--------------+------+-----+---------+----------------+
+| id    | int(11)      | NO   | PRI | NULL    | auto_increment |
+| nama  | varchar(255) | YES  |     | NULL    |                |
++-------+--------------+------+-----+---------+----------------+
+2 rows in set (0.022 sec)
+
+MariaDB [dbkuliah_yoshi]> DESC mahasiswa;
++-----------+--------------+------+-----+---------+-------+
+| Field     | Type         | Null | Key | Default | Extra |
++-----------+--------------+------+-----+---------+-------+
+| id        | int(11)      | NO   | PRI | NULL    |       |
+| nim       | int(11)      | NO   |     | NULL    |       |
+| nama      | varchar(255) | NO   |     | NULL    |       |
+| alamat    | varchar(255) | NO   |     | NULL    |       |
+| idjurusan | int(11)      | NO   |     | NULL    |       |
+| foto      | varchar(255) | YES  |     | NULL    |       |
++-----------+--------------+------+-----+---------+-------+
+6 rows in set (0.017 sec)
+
+MariaDB [dbkuliah_yoshi]> SELECT * FROM jurusan;
++----+------------------------+
+| id | nama                   |
++----+------------------------+
+|  1 | Sistem Informasi       |
+|  2 | Teknik Informatika     |
+|  3 | Bisnis Digital         |
+|  4 | Teknik Elektro         |
+|  5 | Hubungan Internasional |
++----+------------------------+
+5 rows in set (0.000 sec)
+
+MariaDB [dbkuliah_yoshi]> SELECT * FROM mahasiswa;
++----+-----------+--------------------+-------------+-----------+-----------+
+| id | nim       | nama               | alamat      | idjurusan | foto      |
++----+-----------+--------------------+-------------+-----------+-----------+
+|  1 | 110223073 | Yossy Indra Kusuma | Bojong Baru |         2 | Yoshi.jpg |
++----+-----------+--------------------+-------------+-----------+-----------+
+1 row in set (0.000 sec)
+
+MariaDB [dbkuliah_yoshi]>
